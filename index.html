@@ -17,9 +17,10 @@
         
         <div class="margine" v-if="tasks.length === 0">La lista è vuota</div>
         <ul v-else>
-            <li v-for="task, i in tasks" :key="i" :class="tasks[i].done == true ? 'task-fatta' : '' ">
+            <li v-for="task, i in tasks" :key="i" :class="tasks[i].done == true ? 'task-fatta' : '' " ref="itemLista">
                 {{tasks[i].text}}
-                <span @click="removeTask(i)">&#9733;</span>
+                <span @click="lineThrough(i)">&#10004;</span>
+                <span @click="removeTask(i)">&#10539;</span>
             </li>
         </ul>
 

@@ -40,6 +40,11 @@ var app = new Vue(
                     this.newTask = "";
                 }            
             },
+
+            lineThrough(index) {
+                this.$refs.itemLista[index].classList.add("task-fatta")
+            },
+
             removeTask(index) {
                 this.tasks.splice(index, 1)
             }
