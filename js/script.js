@@ -42,7 +42,17 @@ var app = new Vue(
             },
 
             lineThrough(index) {
-                this.$refs.itemLista[index].classList.add("task-fatta")
+                // if (!this.$refs.itemLista[index].className.includes("task-fatta")) {
+                //     this.$refs.itemLista[index].classList.add("task-fatta")
+                // } else {
+                //     this.$refs.itemLista[index].classList.remove("task-fatta")
+                // }
+
+                if (this.tasks[index].done == false) {
+                    this.tasks[index].done = true
+                } else {
+                    this.tasks[index].done = false
+                }                          
             },
 
             removeTask(index) {
